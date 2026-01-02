@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Resume Scorer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Background stars -->
+    <div class="stars"></div>
+
+    <!-- Main container -->
+    <div class="container">
+        <h1>🚀 AI-Powered Resume Scorer</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="resume" accept=".txt,.pdf" required>
+            <button type="submit">Get My Resume Score</button>
+        </form>
+
+        {% if name and score %}
+        <div class="result">
+            <h2>Hello, <span>{{ name }}</span>!</h2>
+            <p>Your resume score is <strong>{{ score }}/10</strong></p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>✨ Project done by <strong>Akshay</strong></p>
+    </footer>
+
+    <!-- Falling stars animation -->
+    <script>
+        const numStars = 60;
+        const starsContainer = document.querySelector('.stars');
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.animationDuration = 3 + Math.random() * 4 + 's';
+            star.style.animationDelay = Math.random() * 5 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
