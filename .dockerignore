@@ -1,0 +1,15 @@
+# Ignore unnecessary files when building Docker image
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.log
+venv/
+.env
+*.ipynb
+.git
+.gitignore
+Dockerfile
+README.md
